@@ -35,7 +35,7 @@ public class UsersDao {
         return jdbcTemplate.queryForObject(sql, params, userDtoMapper);
     }
 
-    public void delUserById(int id) {
+    public void deleteUserById(int id) {
         KeyHolder holder = new GeneratedKeyHolder();
         String sql = "DELETE from users where id = :id";
         MapSqlParameterSource params = new MapSqlParameterSource();

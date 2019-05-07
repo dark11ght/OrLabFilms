@@ -20,7 +20,7 @@ public class Controller {
         }
 
         @GetMapping
-        public List<UsersDto> getEmployee(){
+        public List<UsersDto> getUsers(){
             return usersService.getAll();
 
         }
@@ -34,7 +34,7 @@ public class Controller {
 
         public UsersDto delete(@PathVariable int id){
             UsersDto usersDto = usersService.getUser(id);
-            usersService.delUser(id);
+            usersService.deleteUser(id);
             return usersDto;
         }
 
