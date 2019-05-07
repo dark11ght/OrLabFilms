@@ -1,14 +1,12 @@
-CREATE TABLE users
+CREATE TABLE public.users
 (
-    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id serial NOT NULL,
     login VARCHAR(50) NOT NULL,
-    pass varchar(50) NOT NULL,
+    pass VARCHAR(50) NOT NULL,
     role int DEFAULT 2 NOT NULL
 );
-CREATE UNIQUE INDEX users_login_uindex ON users (login);
+CREATE UNIQUE INDEX favoritefilms_login_uindex ON public.favoritefilms (login);
 
-INSERT INTO `favoritefilms`.`users` (`login`, `pass`, `role`)
-VALUES ('admin', '1111', 1);
-
-INSERT INTO `favoritefilms`.`users` (`login`, `pass`, `role`)
-VALUES ('user1', '1111', DEFAULT);
+INSERT INTO "public".users ("id", "login", "pass", "role") VALUES (DEFAULT, 'admin', '1111', 1);
+INSERT INTO "public".users ("id", "login", "pass", "role") VALUES (DEFAULT, 'user1', '1111', 2);
+INSERT INTO "public".users ("id", "login", "pass", "role") VALUES (DEFAULT, 'user2', '1111', 2);

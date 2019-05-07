@@ -1,33 +1,22 @@
-package com.dark1ight.entities;
+package com.dark1ight.dto;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "users", schema = "favoritefilms")
-public class Users {
-    @Id
-    @GeneratedValue
-    @Column(name = "id", nullable = false)
-    private Long id;
 
-    @Column(name = "login")
+public class UsersDto {
+
+    private int id;
     private String login;
-
-    @Column(name = "pass")
     private String pass;
-
-    @Column(name = "role")
     private int role;
 
-
-    public Users() {
+    public UsersDto() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -55,9 +44,10 @@ public class Users {
         this.role = role;
     }
 
+
     @Override
     public String toString() {
-        return "Users{" +
+        return "UsersDto{" +
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", pass='" + pass + '\'' +
